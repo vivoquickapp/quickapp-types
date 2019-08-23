@@ -1,0 +1,12 @@
+{
+  "name": "@types/quickapp",
+  "version": "1.0.0",
+  "description": "typings for qucik app ",
+  "main": "",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hap-Team",
+  "license": "MIT"
+}
