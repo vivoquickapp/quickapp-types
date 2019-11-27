@@ -50,3 +50,5 @@
 /// <reference path="system/websocketfactory.d.ts" />
 /// <reference path="system/webview.d.ts" />
 /// <reference path="system/wifi.d.ts" />
+/// <reference path="system/zip.d.ts" />
+/// <reference path="system/configuration.d.ts" />

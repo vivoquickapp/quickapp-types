@@ -50,4 +50,56 @@ declare module '@system.cipher' {
          */
         complete?: () => void
     }): void
+
+    /**
+     * 1060+
+     * AES 加解密。支持分段加密
+     * @param obj
+     */
+    export function aes(obj: {
+        /**
+         * 加解密类型，两个可选值：encrypt：加密，decrypt： 解密
+         */
+        action: string,
+        /**
+         * 待加密或解密的文本内容。待加密的文本内容应该是一段普通文本。待解密的文本内容应该是经过 base64 编码的一段二进制值。base64 编码使用默认风格，下同
+         */
+        text: string,
+        /**
+         * 加密或解密使用到的密钥，经过 base64 编码后生成的字符串。
+         */
+        key: string,
+        /**
+         * AES 算法的加密模式和填充项，默认为"AES/CBC/PKCS5Padding"
+         */
+        transformation?: string,
+        /**
+         * AES加解密的初始向量，经过base64编码后的字符串，默认值为key值
+         */
+        iv?: string,
+        /**
+         * AES加解密的初始向量偏移，默认值为0
+         */
+        ivOffset?: number,
+        /**
+         * AES加解密的初始向量字节长度，默认值为16
+         */
+        ivLen?: number,
+        success?: (data: {
+            /**
+             * 经过加密或解密后生成的文本内容。加密后内容是经过 base64 编码的一段二进制值，解密后内容是一段普通文本。如果解密后的内容不能转化为 utf-8 字符串会出错（CODE：200）
+             */
+            text: string
+        }) => void,
+        /**
+         * 失败回调
+         * 202: 输入参数错误
+         * 200: 一般性错误，在加解密出错时会返回此错误
+         */
+        fail?: (data, code) => void,
+        /**
+         * 执行结束后的回调
+         */
+        complete?: () => void
+    }): void
 }

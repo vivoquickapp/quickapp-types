@@ -15,7 +15,17 @@ declare module '@system.media' {
             /**
              * 选取的文件路径
              */
-            uri: string
+            uri: string,
+            /**
+             * 1060+
+             * 选取的文件名称
+             */
+            name: string,
+            /**
+             * 1060+
+             * 选取的文件大小，单位B
+             */
+            size: number
         }) => void,
         /**
          * 失败回调
@@ -44,7 +54,17 @@ declare module '@system.media' {
             /**
              * 选取的文件路径
              */
-            uri: string
+            uri: string,
+            /**
+             * 1060+
+             * 选取的文件名称
+             */
+            name: string,
+            /**
+             * 1060+
+             * 选取的文件大小，单位B
+             */
+            size: number
         }) => void,
         /**
          * 失败回调
@@ -73,7 +93,17 @@ declare module '@system.media' {
             /**
              * 选取的文件路径
              */
-            uri: string
+            uri: string,
+            /**
+             * 1060+
+             * 选取的文件名称
+             */
+            name: string,
+            /**
+             * 1060+
+             * 选取的文件大小，单位B
+             */
+            size: number
         }) => void,
         /**
          * 失败回调
@@ -101,7 +131,17 @@ declare module '@system.media' {
             /**
              * 选取的文件路径
              */
-            uri: string
+            uri: string,
+            /**
+             * 1060+
+             * 选取的文件名称
+             */
+            name: string,
+            /**
+             * 1060+
+             * 选取的文件大小，单位B
+             */
+            size: number
         }) => void,
         /**
          * 失败回调
@@ -130,7 +170,17 @@ declare module '@system.media' {
             /**
              * 选取的文件路径
              */
-            uri: string
+            uri: string,
+            /**
+             * 1060+
+             * 选取的文件名称
+             */
+            name: string,
+            /**
+             * 1060+
+             * 选取的文件大小，单位B
+             */
+            size: number
         }) => void,
         /**
          * 失败回调
@@ -282,7 +332,25 @@ declare module '@system.media' {
             /**
              * 选取的文件路径列表
              */
-            uris: string[]
+            uris: string[],
+            /**
+             * 1060+
+             * 选取的文件列表，是一个file对象的数组
+             */
+            files: {
+                /**
+                 * 选取的文件路径
+                 */
+                uri: string,
+                /**
+                 * 选取的文件名称
+                 */
+                name: string,
+                /**
+                 * 选取的文件大小，单位B
+                 */
+                size: number
+            }[]
         }) => void,
         /**
          * 失败回调
@@ -311,7 +379,25 @@ declare module '@system.media' {
             /**
              * 选取的文件路径列表
              */
-            uris: string[]
+            uris: string[],
+            /**
+            * 1060+
+            * 选取的文件列表，是一个file对象的数组
+            */
+            files: {
+                /**
+                 * 选取的文件路径
+                 */
+                uri: string,
+                /**
+                 * 选取的文件名称
+                 */
+                name: string,
+                /**
+                 * 选取的文件大小，单位B
+                 */
+                size: number
+            }[]
         }) => void,
         /**
          * 失败回调

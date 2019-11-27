@@ -99,4 +99,28 @@ declare module '@system.brightness' {
          */
         complete?: () => void
     }): void
+
+    /**
+     * 1060+
+     * 设置是否保持常亮状态
+     * @param obj
+     */
+    export function setKeepScreenOn(obj: {
+        /**
+         * 是否保持屏幕常亮
+         */
+        keepScreenOn: boolean,
+        /**
+         * 成功回调
+         */
+        success?: () => void,
+        /**
+         * 失败回调
+         */
+        fail?: (data, code) => void,
+        /**
+         * 执行结束后的回调
+         */
+        complete?: () => void
+    }): void
 }

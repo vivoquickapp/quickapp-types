@@ -14,6 +14,15 @@ declare module '@system.sensor' {
          */
         reserved?: boolean,
         /**
+         * 1060+
+         * 监听加速度数据回调函数的执行频率，默认normal
+         * interval 的合法值：
+         * game: 适用于更新游戏的回调频率，在 20ms/次 左右
+         * ui: 适用于更新 UI 的回调频率，在 60ms/次 左右
+         * normal: 普通的回调频率，在 200ms/次 左右
+         */
+        interval?: string,
+        /**
          * 重力感应数据变化后会回调此函数
          */
         callback?: (ret: {

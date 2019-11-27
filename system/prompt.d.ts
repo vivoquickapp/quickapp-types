@@ -41,6 +41,11 @@ declare module '@system.prompt' {
             }
         ],
         /**
+         * 1060+
+         * 是否在点击遮罩时关闭对话框，默认为true
+         */
+        autocancel?: boolean,
+        /**
          * 成功回调
          */
         success?: (data?: {

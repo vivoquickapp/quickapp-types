@@ -10,6 +10,32 @@ declare module '@service.account' {
     export function getProvider(): string
 
     /**
+     * 1060+
+     * 判断账户登录状态。
+     * @param obj 
+     */
+    export function isLogin(obj: {
+        /**
+         * 成功回调
+         */
+        success?: (data: {
+            /**
+             * 登录状态值。true表示已登录，false表示未登录
+             */
+            isLogin: boolean
+        }) => void,
+        /**
+         * 失败回调
+         * 200: 通用错误，判断出错时返回该错误码
+         */
+        fail?: (data, code) => void,
+        /**
+         * 执行结束后的回调
+         */
+        complete?: () => void
+    }): void
+
+    /**
      * 进行OAuth授权
      * @param obj
      */

@@ -19,6 +19,13 @@ declare module '@system.device' {
     };
 
     /**
+     * 1060+
+     * 限制oaid以及android q以上的deviceId是否可以用于广告跟踪
+     * 可读  不可写
+     */
+    export let allowTrackOAID: boolean;
+
+    /**
      * 获取设备信息
      * @param obj
      */
@@ -96,7 +103,7 @@ declare module '@system.device' {
             statusBarHeight: number,
             /**
              * 设备的屏幕密度
-             * [1030+]
+             * [1040+]
              */
             screenDensity: number,
         }) => void,
@@ -124,7 +131,7 @@ declare module '@system.device' {
          */
         success?: (data: {
             /**
-             * 设备唯一标识。在 Android 上返回 IMEI 或 MEID
+             * 设备唯一标识。在 Android 上返回 IMEI 或 MEID; 在Android Q之后，除了华为手机返回aaid(应用匿名设备标识符)，其他厂商手机如果支持oaid（匿名设备标识符）则返回oaid，否则返回空值。
              */
             device?: string,
             /**
@@ -161,7 +168,7 @@ declare module '@system.device' {
          */
         success?: (data: {
             /**
-             * 设备唯一标识。在 Android 上返回 IMEI 或 MEID
+             * 设备唯一标识。在 Android 上返回 IMEI 或 MEID; 在Android Q之后，除了华为手机返回aaid(应用匿名设备标识符)，其他厂商手机如果支持oaid（匿名设备标识符）则返回oaid，否则返回空值。
              */
             deviceId: string
         }) => void,
@@ -293,6 +300,31 @@ declare module '@system.device' {
              * CPU 信息。在 Android 上返回的是/proc/cpuinfo 文件的内容
              */
             cpuInfo: string
+        }) => void,
+        /**
+         * 失败回调
+         */
+        fail?: (data, code) => void,
+        /**
+         * 执行结束后的回调
+         */
+        complete?: () => void
+    }): void
+
+    /**
+     * 1060+
+     * 返回厂商设备标识符中的OAID（匿名设备标识符）
+     * @param obj
+     */
+    export function getOAID(obj: {
+        /**
+        * 成功回调
+        */
+        success?: (data: {
+            /**
+             * oaid的值,如果当前手机还不支持oaid，返回空值
+             */
+            oaid: string | void
         }) => void,
         /**
          * 失败回调
