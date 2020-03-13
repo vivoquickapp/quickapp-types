@@ -85,7 +85,7 @@ declare module '@system.storage' {
      * 删除存储内容
      * @param obj
      */
-    export function delete(obj: {
+    export function _delete(obj: {
         /**
          * 索引
          */
@@ -103,6 +103,7 @@ declare module '@system.storage' {
          */
         complete?: () => void
     }): void
+    export { _delete as delete }
 
     /**
      * 返回存储中某个index的键名

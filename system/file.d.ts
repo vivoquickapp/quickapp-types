@@ -161,7 +161,7 @@ declare module '@system.file' {
      * 删除本地存储的文件，接口中使用的 URI 描述请参考文件组织
      * @param obj
      */
-    export function delete (obj: {
+    function _delete (obj: {
         /**
          * 需要删除的文件 uri，不能是应用资源路径和 tmp 类型的 uri
          */
@@ -181,6 +181,7 @@ declare module '@system.file' {
              */
             complete ?: () => void
     }): void
+    export { _delete as delete }
 
     /**
      * 写文本到文件
