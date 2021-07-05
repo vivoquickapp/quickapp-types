@@ -1,0 +1,15 @@
+{
+  "name": "@types/quickapp",
+  "version": "2.1.0",
+  "description": "typings for qucik app ",
+  "main": "",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "test": "tsc index.d.ts --lib es2015"
+  },
+  "author": "Hap-Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
