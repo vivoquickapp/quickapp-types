@@ -7,15 +7,15 @@ declare module '@system.notification' {
      * 打开网页，标题栏样式与打开webview的页面的标题栏样式相同，在webview的useragent后追加内容，格式是hap/<平台版本号>/<厂商标识> <平台应用包名>/<平台应用版本号> <应用名>/<应用版本号> (<来源信息>)。“来源信息”与app接口的getInfo方法返回结果中的source字段相同。
      * @param obj
      */
-    export function show(obj: {
+    function show(obj: {
         /**
          * 标题
          */
-        contentTitle?: string,
+        contentTitle?: string;
         /**
          * 内容
          */
-        contentText?: string,
+        contentText?: string;
         /**
          * 通知点击后触发动作的信息
          */
@@ -27,7 +27,7 @@ declare module '@system.notification' {
              * 3、特殊的,如果 uri 的值是"/",则跳转到 path 为"/"的页,没有则跳转到首页
              * 可以通过"?param1=value1"的方式添加参数，参数可以在页面中通过this.param1的方式使用
              */
-            uri: string
-        }
-    }): void
+            uri: string;
+        };
+    }): void;
 }

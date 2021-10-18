@@ -8,17 +8,17 @@ declare module '@service.pay' {
      * [1000+]
      * @returns string 服务提供商的代号，如厂商的英文品牌名称，假如无此服务则返回空字符串
      */
-    export function getProvider(): string
+    function getProvider(): string;
 
     /**
      * 使用支付完成付款
      * @param obj
      */
-    export function pay(obj: {
+    function pay(obj: {
         /**
          * 订单信息
          */
-        orderInfo: string,
+        orderInfo: string;
         /**
          * 成功回调
          */
@@ -26,23 +26,23 @@ declare module '@service.pay' {
             /**
              * 返回状态码
              */
-            code: number,
+            code: number;
             /**
              * 消息内容
              */
-            message: string,
+            message: string;
             /**
              * 支付结果
              */
-            result: string,
-        }) => void,
+            result: string;
+        }) => void;
         /**
          * 失败回调，返回失败原因
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 }

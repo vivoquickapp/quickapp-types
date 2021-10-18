@@ -5,16 +5,18 @@
 declare module '@hap.io.Video' {
     /**
      * 1080+
-     * @param callback 
+     * @param callback
      */
-    export function onprogressupdate(callback: (data: {
-        /**
-         * 压缩进度，0~100，每秒有变化时更新
-         */
-        progress: Number
-    }) => {}): void;
+    function onprogressupdate(
+        callback: (data: {
+            /**
+             * 压缩进度，0~100，每秒有变化时更新
+             */
+            progress: number;
+        }) => {},
+    ): void;
 
-    export function compressVideo(obj: {
+    function compressVideo(obj: {
         /**
          * 成功回调
          */
@@ -22,16 +24,16 @@ declare module '@hap.io.Video' {
             /**
              * 压缩后视频文件地址
              */
-             uri: string,
-             /**
-              * 视频文件名称
-              */
-             name: string,
-             /**
-              * 视频文件大小，单位 B
-              */
-             size: string
-        }) => void,
+            uri: string;
+            /**
+             * 视频文件名称
+             */
+            name: string;
+            /**
+             * 视频文件大小，单位 B
+             */
+            size: string;
+        }) => void;
         /**
          * 失败回调
          * 200: 接口功能异常，可能原因：压缩任务已执行过 abort、系统版本过低(Android L 或以上才支持)
@@ -41,31 +43,35 @@ declare module '@hap.io.Video' {
          * 300: IO 错误
          * 1001: 原视频无效，可能原因：传来的文件不是视频
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 
-    export function abort(obj: {
+    function abort(obj: {
         /**
          * 成功回调
          */
-        success?: () => void,
+        success?: () => void;
         /**
          * 失败回调
          * 200: 该任务已经执行完成或已被中断
          * 203: 找不到任务实例
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 
-    export function getVideoInfo(obj: {
+    function getVideoInfo(obj: {
+        /**
+         * 视频文件地址
+         */
+        uri: string;
         /**
          * 成功回调
          */
@@ -73,49 +79,49 @@ declare module '@hap.io.Video' {
             /**
              * 视频文件地址
              */
-            uri: string,
+            uri: string;
             /**
              * 视频文件名称
              */
-            name: string,
+            name: string;
             /**
              * 视频文件大小，单位 B
              */
-            size: string,
+            size: string;
             /**
              * 视频高度，单位像素
              */
-            height: number,
+            height: number;
             /**
              * 视频宽度，单位像素
              */
-            width: number,
+            width: number;
             /**
              * 视频码率，单位 bps(比特/秒)
              */
-            bitrate: number,
+            bitrate: number;
             /**
              * 视频帧率，单位 fps(帧/秒)。部分机型可能返回为空
              */
-            framerate: number
-        }) => void,
+            framerate: number;
+        }) => void;
         /**
          * 失败回调
          * 200: 接口功能异常
          * 202: 参数错误
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 
-    export function getVideoThumbnail(obj: {
+    function getVideoThumbnail(obj: {
         /**
          * 视频文件地址
          */
-        uri: string,
+        uri: string;
         /**
          * 成功回调
          */
@@ -123,18 +129,17 @@ declare module '@hap.io.Video' {
             /**
              * 缩略图文件地址
              */
-            uri: string
-        }) => void,
+            uri: string;
+        }) => void;
         /**
          * 失败回调
          * 200: 接口功能异常
          * 202: 参数错误
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 }
-

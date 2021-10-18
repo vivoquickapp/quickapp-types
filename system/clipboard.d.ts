@@ -7,30 +7,30 @@ declare module '@system.clipboard' {
      * 修改剪贴板内容
      * @param obj
      */
-    export function set(obj: {
+    function set(obj: {
         /**
          * 需要放到剪切板的内容
          */
-        text: string,
+        text: string;
         /**
          * 成功回调
          */
-        success?: () => void,
+        success?: () => void;
         /**
          * 失败回调
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 
     /**
      * 读取剪贴板内容
-     * @param obj 
+     * @param obj
      */
-    export function get(obj: {
+    function get(obj: {
         /**
          * 成功回调
          */
@@ -38,15 +38,15 @@ declare module '@system.clipboard' {
             /**
              * 剪切板内容
              */
-            text: string
-        }) => void,
+            text: string;
+        }) => void;
         /**
          * 失败回调
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 }

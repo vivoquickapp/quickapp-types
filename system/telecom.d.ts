@@ -5,9 +5,9 @@
 declare module '@system.telecom' {
     /**
      * 获取设备通信信息
-     * @param obj 
+     * @param obj
      */
-    export function getTelecomInfo(obj: {
+    function getTelecomInfo(obj: {
         /**
          * 成功回调
          */
@@ -15,19 +15,19 @@ declare module '@system.telecom' {
             /**
              * 是否是5G设备
              */
-            is5GDevice: boolean,
+            is5GDevice: boolean;
             /**
              * 5G开关是否已打开
              */
-            is5GSwitchOpened: boolean
-        }) => void,
+            is5GSwitchOpened: boolean;
+        }) => void;
         /**
          * 失败回调
          */
-        fail?: (data, code) => void,
+        fail?: (data: any, code: number) => void;
         /**
          * 执行结束后的回调
          */
-        complete?: () => void
-    }): void
+        complete?: () => void;
+    }): void;
 }

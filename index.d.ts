@@ -1,6 +1,11 @@
-// Type definitions for Hap
-// Definitions by: Hap <https://www.quickapp.cn/>
-// 服务
+// Type definitions for non-npm package quickapp-types 1.0
+// Project: https://github.com/vivoquickapp/quickapp-types
+// Definitions by: hapTeam <https://github.com/vivoquickapp>
+//                 chenjiangfeng <https://github.com/Jerome77777>
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// TypeScript Version: 3.7
+
+/// <reference types="node" />
 /// <reference path="service/account.d.ts" />
 /// <reference path="service/alipay.d.ts" />
 /// <reference path="service/exchange.d.ts" />
@@ -55,6 +60,12 @@
 /// <reference path="system/zip.d.ts" />
 /// <reference path="system/configuration.d.ts" />
 /// <reference path="system/telecom.d.ts" />
+/// <reference path="system/keyguard.d.ts" />
+/// <reference path="system/downloadtask.d.ts" />
+/// <reference path="system/uploadtask.d.ts" />
+/// <reference path="system/requesttask.d.ts" />
+/// <reference path="system/nfc.d.ts" />
+/// <reference path="system/screenshot.d.ts" />
 
 // hap 接口
 /// <reference path="hap/video.d.ts" />

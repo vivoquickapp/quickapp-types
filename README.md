@@ -1,5 +1,6 @@
 # Installation
-> `npm install --save-dev https://github.com/vivoquickapp/quickapp-types`
+> git: `npm install --save-dev https://github.com/vivoquickapp/quickapp-types`
+> npm: `npm install --save-dev quickapp`
 
 ## Summary
 

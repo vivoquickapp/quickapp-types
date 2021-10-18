@@ -7,15 +7,15 @@ declare module '@service.alipay' {
      * 使用支付宝支完成支付
      * @param obj
      */
-    export function pay(obj: {
+    function pay(obj: {
         /**
          * 服务端生成的订单信息
          */
-        orderInfo: string,
+        orderInfo: string;
         /**
          * 支付结果回调，格式参考支付宝的通知参数说明文档
          * [详见:https://docs.open.alipay.com/204/105302 ]
          */
-        callback?: (ret) => void
-    }): void
+        callback?: (ret: any) => void;
+    }): void;
 }

@@ -5,31 +5,31 @@ declare module '@system.app' {
     /**
      * 获取设备信息
      */
-    export function getInfo(): {
+    function getInfo(): {
         /**
          * 应用包名
          */
-        packageName: string,
+        packageName: string;
         /**
          * 应用图标路径
          */
-        icon: string,
+        icon: string;
         /**
          * 应用名称
          */
-        name: string,
+        name: string;
         /**
          * 应用版本名称
          */
-        versionName: string,
+        versionName: string;
         /**
          * 应用版本号
          */
-        versionCode: number,
+        versionCode: number;
         /**
          * 	log 级别
          */
-        logLevel: string,
+        logLevel: string;
         /**
          * 应用来源
          */
@@ -37,28 +37,28 @@ declare module '@system.app' {
             /**
              * 来源 app 的包名，一级来源
              */
-            packageName: string,
+            packageName: string;
             /**
              * 来源类型，二级来源，值为 shortcut、push、url、barcode、nfc、bluetooth、other
              */
-            type: string,
+            type: string;
             /**
              * 来源其他信息，与 type 相关，不同的 type，extra 中的字段会不同
              */
-            extra: object
-        }
-    }
+            extra: object;
+        };
+    };
 
     /**
      * 生成快应用分享二维码
      * [1070+]
      * @param obj
      */
-    export function createQuickAppQRCode(obj: {
+    function createQuickAppQRCode(obj: {
         /**
          * 页面路径，可携带参数
          */
-        path?: string,
+        path?: string;
         /**
          * 成功回调
          */
@@ -66,11 +66,11 @@ declare module '@system.app' {
             /**
              * 二维码文件地址
              */
-            uri: string
-        }) => void,
+            uri: string;
+        }) => void;
         /**
          * 失败回调
          */
-        fail?: (data, code) => void
-    }): void
+        fail?: (data: any, code: number) => void;
+    }): void;
 }
